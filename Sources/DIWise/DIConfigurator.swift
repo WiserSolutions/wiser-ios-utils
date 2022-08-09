@@ -8,7 +8,7 @@
 import Foundation
 
 @objcMembers
-public class DIConfigurator: NSObject {
+open class DIConfigurator: NSObject {
     
     private static let container: DIContainerProtocol = DIContainer.shared
     
