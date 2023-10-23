@@ -2,7 +2,7 @@ import Foundation
 import Nimble
 
 ///Invocation Count
-public func invoke<T: Mockable>(_ name: T.MockedMethod, times: Int = 1) -> Predicate<T> {
+public func invoke<T: Mockable>(_ name: T.MockedMethod, times: Int = 1) -> Nimble.Predicate<T> {
     
     return Predicate<T>.define { actualExpression in
         var expectationMessage: ExpectationMessage!
@@ -23,7 +23,7 @@ public func invoke<T: Mockable>(_ name: T.MockedMethod, times: Int = 1) -> Predi
 }
 
 ///Equality
-public func invoke<T: Mockable, E: Equatable>(_ name: T.MockedMethod, atInvocation invocationIndex: Int = 0, withParameter parameter: E?, at parameterIndex: Int = 0) -> Predicate<T> {
+public func invoke<T: Mockable, E: Equatable>(_ name: T.MockedMethod, atInvocation invocationIndex: Int = 0, withParameter parameter: E?, at parameterIndex: Int = 0) -> Nimble.Predicate<T> {
     return Predicate<T>.define { actualExpression in
         var expectationMessage: ExpectationMessage!
         var status: PredicateStatus!
@@ -44,7 +44,7 @@ public func invoke<T: Mockable, E: Equatable>(_ name: T.MockedMethod, atInvocati
 }
 
 ///Identity
-public func invoke<T: Mockable, E: AnyObject>(_ name: T.MockedMethod, atInvocation invocationIndex: Int = 0, withIdenticalParameter parameter: E?, at parameterIndex: Int = 0) -> Predicate<T> {
+public func invoke<T: Mockable, E: AnyObject>(_ name: T.MockedMethod, atInvocation invocationIndex: Int = 0, withIdenticalParameter parameter: E?, at parameterIndex: Int = 0) -> Nimble.Predicate<T> {
     return Predicate<T>.define { actualExpression in
         var expectationMessage: ExpectationMessage!
         var status: PredicateStatus!
@@ -64,7 +64,7 @@ public func invoke<T: Mockable, E: AnyObject>(_ name: T.MockedMethod, atInvocati
 }
 
 /// Closure Matcher
-public func invoke<T: Mockable, U>(_ name: T.MockedMethod, atInvocation invocationIndex: Int = 0, atParameterIndex parameterIndex: Int = 0, withMatcher matcher: @escaping ((U?) -> Bool)) -> Predicate<T> {
+public func invoke<T: Mockable, U>(_ name: T.MockedMethod, atInvocation invocationIndex: Int = 0, atParameterIndex parameterIndex: Int = 0, withMatcher matcher: @escaping ((U?) -> Bool)) -> Nimble.Predicate<T> {
     return Predicate<T>.define { actualExpression in
         var expectationMessage: ExpectationMessage!
         var status: PredicateStatus!
