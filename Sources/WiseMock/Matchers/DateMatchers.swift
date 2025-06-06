@@ -10,7 +10,7 @@ import Nimble
 
 
 public func beTheSameDayAs(_ expectedDate: Date) -> Nimble.Predicate<Date> {
-    return Predicate<Date>.define { actualExpression in
+    return Nimble.Predicate<Date>.define { actualExpression in
         var expectationMessage: ExpectationMessage!
         var status: PredicateStatus!
         
