@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "wiser-ios-utils",
     platforms: [
-          .macOS(.v10_10), .iOS(.v16)
+          .macOS(.v10_10), .iOS(.v13)
         ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
